@@ -24,20 +24,14 @@ type = "[float]"
 from = "node.amp.a"
 
 [node.env]
-input = {
-  on = "input.on",
-  up = "input.env-up",
-  hold = "input.env-hold",
-  down = "input.env-down",
-}
+input.on = "input.on"
+input.up = "input.env-up"
+input.hold = "input.env-hold"
+input.down = "input.env-down"
 
 [node.sin]
-input = {
-  freq = "input.freq",
-}
+input.freq = "input.freq"
 
 [node.amp]
-input = {
-  k = "node.env.amp-k",
-  a = "node.sin.a",
-}
+input.k = "node.env.amp-k"
+input.a = "node.sin.a"
