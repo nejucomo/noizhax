@@ -1,0 +1,43 @@
+description = "play a note with a sine wave and basic amplitude envelope"
+
+[input.on]
+type = "bool"
+
+[input.freq]
+type = "float"
+description = "the note frequency (Hz)"
+
+[input.env-up]
+type = "float"
+description = "the ramp-up time (ms)"
+
+[input.env-hold]
+type = "float"
+description = "the hold time (ms)"
+
+[input.env-down]
+type = "float"
+description = "the ramp-down time (ms)"
+
+[output.audio]
+type = "[float]"
+from = "node.amp.a"
+
+[node.env]
+input = {
+  on = "input.on",
+  up = "input.env-up",
+  hold = "input.env-hold",
+  down = "input.env-down",
+}
+
+[node.sin]
+input = {
+  freq = "input.freq",
+}
+
+[node.amp]
+input = {
+  k = "node.env.amp-k",
+  a = "node.sin.a",
+}
