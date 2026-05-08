@@ -1,4 +1,4 @@
-//! `noisehax`: (yet another) a library / cli tool for signal processing networks
+//! `noizhax`: signal processing network toy
 #![deny(missing_docs)]
 
 mod input;
